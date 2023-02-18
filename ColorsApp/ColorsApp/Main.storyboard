@@ -17,8 +17,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="5G0-bC-Mb3">
-                                <rect key="frame" x="0.0" y="155" width="393" height="663"/>
+                                <rect key="frame" x="0.0" y="103" width="393" height="749"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ColorCell" id="0xH-qB-KdC">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0xH-qB-KdC" id="hLH-cy-ran">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
                                 <connections>
                                     <outlet property="dataSource" destination="Y6W-OH-hqX" id="YvB-KY-P8U"/>
                                     <outlet property="delegate" destination="Y6W-OH-hqX" id="V5b-aV-8AV"/>
@@ -29,8 +40,8 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="5G0-bC-Mb3" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="apo-AP-x2w"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="5G0-bC-Mb3" secondAttribute="bottom" id="cNT-5g-FPT"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="5G0-bC-Mb3" secondAttribute="trailing" id="dh0-QF-djA"/>
+                            <constraint firstAttribute="bottom" secondItem="5G0-bC-Mb3" secondAttribute="bottom" id="ulv-JE-wX7"/>
                             <constraint firstItem="5G0-bC-Mb3" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="x38-IQ-S6Z"/>
                         </constraints>
                     </view>

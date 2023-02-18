@@ -14,6 +14,7 @@
 		A084762B29A0CF3500F3C49B /* ColorsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A084762A29A0CF3500F3C49B /* ColorsTableViewController.swift */; };
 		A084762D29A0CFB000F3C49B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A084762C29A0CFB000F3C49B /* Main.storyboard */; };
 		A084762F29A0D26500F3C49B /* ColorsDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A084762E29A0D26500F3C49B /* ColorsDetailsViewController.swift */; };
+		A084763129A0E5A600F3C49B /* UIColorExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = A084763029A0E5A600F3C49B /* UIColorExt.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		A084762A29A0CF3500F3C49B /* ColorsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsTableViewController.swift; sourceTree = "<group>"; };
 		A084762C29A0CFB000F3C49B /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		A084762E29A0D26500F3C49B /* ColorsDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsDetailsViewController.swift; sourceTree = "<group>"; };
+		A084763029A0E5A600F3C49B /* UIColorExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExt.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				A084761D29A0CE5700F3C49B /* Assets.xcassets */,
 				A084761F29A0CE5700F3C49B /* LaunchScreen.storyboard */,
 				A084762A29A0CF3500F3C49B /* ColorsTableViewController.swift */,
+				A084763029A0E5A600F3C49B /* UIColorExt.swift */,
 				A084762229A0CE5700F3C49B /* Info.plist */,
 				A084762C29A0CFB000F3C49B /* Main.storyboard */,
 				A084762E29A0D26500F3C49B /* ColorsDetailsViewController.swift */,
@@ -144,6 +147,7 @@
 				A084761529A0CE5500F3C49B /* AppDelegate.swift in Sources */,
 				A084762F29A0D26500F3C49B /* ColorsDetailsViewController.swift in Sources */,
 				A084761729A0CE5500F3C49B /* SceneDelegate.swift in Sources */,
+				A084763129A0E5A600F3C49B /* UIColorExt.swift in Sources */,
 				A084762B29A0CF3500F3C49B /* ColorsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
