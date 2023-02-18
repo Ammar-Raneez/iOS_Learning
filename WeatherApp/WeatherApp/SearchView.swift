@@ -31,15 +31,42 @@ struct SearchView: View {
         "Wind Speed",
         "Clouds (1%)"
     ]
-    let titles: [String] = [
-        "Broken Clouds",
-        "25.99 °C",
-        "64.0",
-        "1013.0",
-        "10000.0",
-        "3.01",
-        "68.0"
+//    let titles: [String] = [
+//        "Broken Clouds",
+//        "25.99 °C",
+//        "64.0",
+//        "1013.0",
+//        "10000.0",
+//        "3.01",
+//        "68.0"
+//    ]
+    
+    let gridColumns: [GridItem] = [
+        GridItem(.fixed(UIScreen.main.bounds.width * 0.45)), GridItem(.fixed(UIScreen.main.bounds.width * 0.45)),
     ]
+
+    func getTitle(type titleType: String) -> String {
+        let tempWeatherObj = self.networkStore.weatherObj
+        
+        switch (titleType) {
+        case subtitles[0]:
+            return tempWeatherObj?.weather[0].description ?? self.defaultValue
+        case subtitles[1]:
+            return "\(tempWeatherObj?.main.temp == nil ? self.defaultValue : String(describing: tempWeatherObj!.main.temp)) °C"
+        case subtitles[2]:
+            return tempWeatherObj?.main.humidity == nil ? self.defaultValue : String(describing: tempWeatherObj!.main.humidity)
+        case subtitles[3]:
+            return tempWeatherObj?.main.pressure == nil ? self.defaultValue : String(describing: tempWeatherObj!.main.pressure)
+        case subtitles[4]:
+            return tempWeatherObj?.visibility == nil ? self.defaultValue : String(describing: tempWeatherObj!.visibility)
+        case subtitles[5]:
+            return tempWeatherObj?.wind.speed == nil ? self.defaultValue : String(describing: tempWeatherObj!.wind.speed)
+        case subtitles[6]:
+            return tempWeatherObj?.clouds.all == nil ? self.defaultValue : String(describing: tempWeatherObj!.clouds.all)
+        default:
+            return self.defaultValue
+        }
+    }
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -52,77 +79,26 @@ struct SearchView: View {
                 Button {
                     Task {
                         print("Fetch city weather")
-                        await self.networkStore.fetchData(self.cityName)
+                        if self.cityName.trimmingCharacters(in: [" "]) == "" {
+                            print("Invalid city name")
+                        } else {
+                            await self.networkStore.fetchData(self.cityName)
+                        }
                     }
                 } label: {
                     Text("Search")
                 }
             }
             ScrollView {
-                HStack {
-                    WeatherConditionView(
-                        image: images[0],
-                        title: self.networkStore.weatherObj?.weather[0].description ?? self.defaultValue,
-                        subtitle: subtitles[0]
-                    )
-                    WeatherConditionView(
-                        image: images[1],
-                        title: "\(self.networkStore.weatherObj?.main.temp == nil ? self.defaultValue : String(describing: self.networkStore.weatherObj!.main.temp)) °C",
-                        subtitle: subtitles[1]
-                    )
+                LazyVGrid(columns: gridColumns, spacing: 20) {
+                    ForEach(0..<images.count, id: \.self) {
+                        i in WeatherConditionView(
+                            image: images[i],
+                            title: getTitle(type: subtitles[i]),
+                            subtitle: subtitles[i]
+                        )
+                    }
                 }
-                HStack {
-                    WeatherConditionView(
-                        image: images[2],
-                        title: self.networkStore.weatherObj?.main.humidity == nil ? self.defaultValue : String(describing: self.networkStore.weatherObj!.main.humidity),
-                        subtitle: subtitles[2]
-                    )
-                    WeatherConditionView(
-                        image: images[3],
-                        title: self.networkStore.weatherObj?.main.pressure == nil ? self.defaultValue : String(describing: self.networkStore.weatherObj!.main.pressure),
-                        subtitle: subtitles[3]
-                    )
-                }
-                HStack {
-                    WeatherConditionView(
-                        image: images[4],
-                        title: self.networkStore.weatherObj?.visibility == nil ? self.defaultValue : String(describing: self.networkStore.weatherObj!.visibility),
-                        subtitle: subtitles[4]
-                    )
-                    WeatherConditionView(
-                        image: images[5],
-                        title: self.networkStore.weatherObj?.wind.speed == nil ? self.defaultValue : String(describing: self.networkStore.weatherObj!.wind.speed),
-                        subtitle: subtitles[5]
-                    )
-                }
-                HStack {
-                    WeatherConditionView(
-                        image: images[6],
-                        title: self.networkStore.weatherObj?.clouds.all == nil ? self.defaultValue : String(describing: self.networkStore.weatherObj!.clouds.all),
-                        subtitle: subtitles[6]
-                    )
-                    Spacer()
-                }
-
-//                ForEach(0..<images.count, id: \.self) {
-//                    i in Group {
-//                        if i % 2 == 0 {
-//                            HStack {
-//                                WeatherConditionView(
-//                                    image: images[i],
-//                                    title: titles[i],
-//                                    subtitle: subtitles[i]
-//                                )
-//                            }
-//                        } else {
-//                            WeatherConditionView(
-//                                image: images[i],
-//                                title: titles[i],
-//                                subtitle: subtitles[i]
-//                            )
-//                        }
-//                    }
-//                }
             }
         }.padding()
     }
