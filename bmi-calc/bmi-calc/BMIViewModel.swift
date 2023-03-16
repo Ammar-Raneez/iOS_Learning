@@ -8,7 +8,8 @@
 import Foundation
 
 final class BMIViewModel: ObservableObject {
-    @Published var bmi: Double?;
+    @Published var bmi: Double?
+    @Published var bmiInfo: String?
     @Published var alertItem: AlertItem?
     
     func calculateBMI(weightVal: String, heightVal: String) {
@@ -19,6 +20,16 @@ final class BMIViewModel: ObservableObject {
             return
         }
         
-        self.bmi = weight / (pow(height, 2))
+        let tempBMI = weight / (pow(height, 2))
+        
+        if tempBMI > 30 {
+            bmiInfo = "You are considered to be obese."
+        } else if tempBMI > 25 {
+            bmiInfo = "You are considered to be overweight."
+        } else {
+            bmiInfo = "You are healthy!"
+        }
+        
+        bmi = tempBMI
     }
 }
