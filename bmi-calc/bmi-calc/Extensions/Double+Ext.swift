@@ -1,5 +1,5 @@
 //
-//  Button+Ext.swift
+//  Double+Ext.swift
 //  bmi-calc
 //
 //  Created by Ammar on 2023-03-15.

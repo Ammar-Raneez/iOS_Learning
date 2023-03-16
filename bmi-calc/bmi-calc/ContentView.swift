@@ -38,6 +38,9 @@ struct ContentView: View {
         
         }
         .padding()
+        .alert(item: $viewModel.alertItem) { alert in
+            Alert(title: alert.title, message: alert.description, dismissButton: alert.dismissButton)
+        }
     }
 }
 
