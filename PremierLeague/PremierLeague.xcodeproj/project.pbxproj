@@ -13,6 +13,7 @@
 		A016686529CC2508002934CD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A016686429CC2508002934CD /* Preview Assets.xcassets */; };
 		A016686C29CC27D0002934CD /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = A016686B29CC27D0002934CD /* Player.swift */; };
 		A016686E29CC289F002934CD /* PlayerDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A016686D29CC289F002934CD /* PlayerDetailView.swift */; };
+		A016688829CC3E7B002934CD /* PlayerList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A016688729CC3E7B002934CD /* PlayerList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		A016686429CC2508002934CD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A016686B29CC27D0002934CD /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		A016686D29CC289F002934CD /* PlayerDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDetailView.swift; sourceTree = "<group>"; };
+		A016688729CC3E7B002934CD /* PlayerList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				A016685F29CC2506002934CD /* PlayerListView.swift */,
 				A016686D29CC289F002934CD /* PlayerDetailView.swift */,
 				A016686B29CC27D0002934CD /* Player.swift */,
+				A016688729CC3E7B002934CD /* PlayerList.swift */,
 				A016686129CC2508002934CD /* Assets.xcassets */,
 				A016686329CC2508002934CD /* Preview Content */,
 			);
@@ -144,6 +147,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A016686E29CC289F002934CD /* PlayerDetailView.swift in Sources */,
+				A016688829CC3E7B002934CD /* PlayerList.swift in Sources */,
 				A016686029CC2506002934CD /* PlayerListView.swift in Sources */,
 				A016686C29CC27D0002934CD /* Player.swift in Sources */,
 				A016685E29CC2506002934CD /* PremierLeagueApp.swift in Sources */,

@@ -8,19 +8,26 @@
 import SwiftUI
 
 struct PlayerListView: View {
+    @StateObject var playerList = PlayerList()
+    
     var body: some View {
         NavigationStack {
-            List(players) { player in
-                NavigationLink {
-                    PlayerDetailView(player: player)
-                } label: {
-                    HStack {
-                        Image(player.imageName)
-                            .resizable()
-                            .frame(width: 100, height: 100)
-                            .cornerRadius(1000)
-                        Text(player.name)
+            List {
+                ForEach(playerList.players) { player in
+                    NavigationLink {
+                        PlayerDetailView(player: player)
+                    } label: {
+                        HStack {
+                            Image(player.imageName)
+                                .resizable()
+                                .frame(width: 100, height: 100)
+                                .cornerRadius(1000)
+                            Text(player.name)
+                        }
                     }
+                }
+                .onDelete { i in
+                    playerList.players.remove(atOffsets: i)
                 }
             }
             .navigationTitle(Text("Top EPL Players"))

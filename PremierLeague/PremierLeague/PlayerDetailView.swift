@@ -14,6 +14,8 @@ struct PlayerDetailView: View {
         VStack {
             HStack {
                 Image(player.imageName)
+                    .resizable()
+                    .frame(width: 200, height: 200)
                     .cornerRadius(1000)
             }
             
@@ -29,6 +31,6 @@ struct PlayerDetailView: View {
 
 struct PlayerDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        PlayerDetailView(player: players[0])
+        PlayerDetailView(player: PlayerList().players[0])
     }
 }
