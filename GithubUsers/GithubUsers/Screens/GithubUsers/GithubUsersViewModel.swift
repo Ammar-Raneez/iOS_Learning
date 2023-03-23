@@ -16,7 +16,7 @@ final class GithubUsersViewModel: ObservableObject {
             do {
                 users = try await NetworkStore.shared.getUserData(dataUrl: "https://api.github.com/users")
             } catch {
-                print("Something went wrong")
+                print("Something went wrong fetching list of users")
             }
         }
     }

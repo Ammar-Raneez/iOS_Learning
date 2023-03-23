@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  GithubUserFollowersView.swift
 //  GithubUsers
 //
 //  Created by Ammar on 2023-03-23.
@@ -7,15 +7,16 @@
 
 import SwiftUI
 
-struct ContentView: View {
-    @StateObject var viewModel = GithubUsersViewModel()
+struct GithubUserFollowersView: View {
+    var user: User
+    @StateObject var viewModel = GithubUserFollowersViewModel()
     
     var body: some View {
         NavigationStack {
             List {
-                ForEach(viewModel.users) { user in
+                ForEach(viewModel.userFollowers) { user in
                     NavigationLink {
-                        
+                        GithubUserView(user: user)
                     } label: {
                         HStack {
                             AsyncImage(url: URL(string: user.avatar_url)) { image in
@@ -30,16 +31,10 @@ struct ContentView: View {
                     }
                 }
             }
-            .navigationTitle(Text("Github Users"))
+            .navigationTitle(Text("\(user.login)'s Followers"))
         }
         .task {
-            viewModel.getUsers()
+            viewModel.getUserFollowers(user: user)
         }
-    }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
     }
 }
