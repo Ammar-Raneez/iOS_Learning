@@ -9,6 +9,7 @@ import SwiftUI
 
 struct User: Identifiable, Decodable {
     var id: Int
+    var html_url: String
     var login: String
     var avatar_url: String
     var followers_url: String

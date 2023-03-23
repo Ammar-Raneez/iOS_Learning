@@ -25,7 +25,15 @@ struct GithubUsersView: View {
                                 ProgressView()
                             }
                             .frame(width: 50, height: 50)
-                            Text(user.login)
+                            VStack(alignment: .leading) {
+                                Text(user.login)
+                                Link(destination: URL(string: user.html_url)!) {
+                                    Text("View on GitHub")
+                                        .font(.caption)
+                                        .foregroundColor(.cyan)
+                                        .fontWeight(.semibold)
+                                }
+                            }
                         }
                     }
                 }
