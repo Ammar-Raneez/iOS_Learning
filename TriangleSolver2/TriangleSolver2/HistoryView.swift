@@ -8,49 +8,50 @@
 import SwiftUI
 
 struct HistoryView: View {
-    @AppStorage("aField") private var aField = ""
-    @AppStorage("bField") private var bField = ""
-    @AppStorage("cField") private var cField = ""
-    @AppStorage("a") private var a = ""
-    @AppStorage("b") private var b = ""
-    @AppStorage("c") private var c = ""
-    @AppStorage("area") private var area = ""
-    @AppStorage("perimeter") private var perimeter = ""
-    @AppStorage("calulated") private var calculated = false
-    
+    @StateObject var viewModel = CalculationViewModel()
+
     var body: some View {
         NavigationStack {
             VStack(alignment: .center) {
-                HStack {
-                    Text(aField)
+                if viewModel.calculated {
+                    HStack {
+                        Text(viewModel.aField)
+                        Spacer()
+                        Text("\(viewModel.a)")
+                    }
+                    HStack {
+                        Text(viewModel.bField)
+                        Spacer()
+                        Text("\(viewModel.b)")
+                    }
+                    HStack {
+                        Text(viewModel.cField)
+                        Spacer()
+                        Text("\(viewModel.c)")
+                    }
+                    HStack {
+                        Text("Area:")
+                        Spacer()
+                        Text("\(viewModel.area)")
+                    }
+                    HStack {
+                        Text("Perimeter:")
+                        Spacer()
+                        Text("\(viewModel.perimeter)")
+                    }
+                    
                     Spacer()
-                    Text("\(a)")
-                }
-                HStack {
-                    Text(bField)
-                    Spacer()
-                    Text("\(b)")
-                }
-                HStack {
-                    Text(cField)
-                    Spacer()
-                    Text("\(c)")
-                }
-                HStack {
-                    Text("Area:")
-                    Spacer()
-                    Text("\(area)")
-                }
-                HStack {
-                    Text("Perimeter:")
-                    Spacer()
-                    Text("\(perimeter)")
+                } else {
+                    HStack(alignment: .center) {
+                        Text("No calculated history available")
+                            .font(.title)
+                            .foregroundColor(.gray)
+                            .multilineTextAlignment(.center)
+                    }
                 }
             }
             .padding(.horizontal)
             .navigationTitle(Text("Last Calculation"))
-            
-            Spacer()
         }
     }
 }

@@ -14,6 +14,7 @@
 		A0749A3329C4238800452440 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0749A3229C4238800452440 /* HistoryView.swift */; };
 		A0749A3529C423A300452440 /* CalculationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0749A3429C423A300452440 /* CalculationView.swift */; };
 		A0749A3929C4255600452440 /* EdgeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0749A3829C4255600452440 /* EdgeType.swift */; };
+		A0751E0B29CC00BD006CAE7C /* CalculationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0751E0A29CC00BD006CAE7C /* CalculationViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		A0749A3229C4238800452440 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 		A0749A3429C423A300452440 /* CalculationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculationView.swift; sourceTree = "<group>"; };
 		A0749A3829C4255600452440 /* EdgeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdgeType.swift; sourceTree = "<group>"; };
+		A0751E0A29CC00BD006CAE7C /* CalculationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculationViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				A0749A2629C4236A00452440 /* ContentView.swift */,
 				A0749A3229C4238800452440 /* HistoryView.swift */,
 				A0749A3429C423A300452440 /* CalculationView.swift */,
+				A0751E0A29CC00BD006CAE7C /* CalculationViewModel.swift */,
 				A0749A3829C4255600452440 /* EdgeType.swift */,
 				A0749A2829C4236A00452440 /* Assets.xcassets */,
 				A0749A2A29C4236B00452440 /* Preview Content */,
@@ -146,6 +149,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0751E0B29CC00BD006CAE7C /* CalculationViewModel.swift in Sources */,
 				A0749A2729C4236A00452440 /* ContentView.swift in Sources */,
 				A0749A3329C4238800452440 /* HistoryView.swift in Sources */,
 				A0749A3929C4255600452440 /* EdgeType.swift in Sources */,
